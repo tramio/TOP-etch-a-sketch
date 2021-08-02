@@ -34,6 +34,9 @@ function clearGrid(event) {
         square.classList.remove("hovered");
     });
     squareNumber = prompt("How many squares per side do you want?", "Yes");
+    while (squareNumber >= 100) {
+        squareNumber = prompt("Less please!");
+    }
     addDivs(squareNumber);
     squares = document.querySelectorAll(".square");
     makeThemListen();
