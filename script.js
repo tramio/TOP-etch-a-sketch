@@ -17,3 +17,12 @@ squares.forEach(square => {
         square.classList.add("hovered");
     });
 });
+
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", clearGrid);
+
+function clearGrid(event) {
+    squares.forEach(square => {
+        square.classList.remove("hovered");
+    });
+}
