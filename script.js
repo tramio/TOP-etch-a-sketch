@@ -9,3 +9,11 @@ function addDivs() {
 }
 
 addDivs();
+
+const squares = document.querySelectorAll(".square");
+
+squares.forEach(square => {
+    square.addEventListener("mouseover", function(e) {
+        square.classList.add("hovered");
+    });
+});
