@@ -14,13 +14,17 @@ function addDivs(squareNumber) {
 
 addDivs(16);
 
-const squares = document.querySelectorAll(".square");
+let squares = document.querySelectorAll(".square");
 
-squares.forEach(square => {
-    square.addEventListener("mouseover", function(e) {
-        square.classList.add("hovered");
+function makeThemListen() {
+    squares.forEach(square => {
+        square.addEventListener("mouseover", function(e) {
+            square.classList.add("hovered");
+        });
     });
-});
+}
+
+makeThemListen();
 
 const clearBtn = document.getElementById("clearBtn");
 clearBtn.addEventListener("click", clearGrid);
@@ -31,4 +35,6 @@ function clearGrid(event) {
     });
     squareNumber = prompt("How many squares per side do you want?", "Yes");
     addDivs(squareNumber);
+    squares = document.querySelectorAll(".square");
+    makeThemListen();
 }
